@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: nocodb
+    env: docker
+    repo: https://github.com/Et-Nyx/nocodb_deploy.git
+    plan: free
+    dockerCommand: node /usr/app/index.js
+    ports:
+      - port: 8080
+        protocol: TCP
+    disks:
+      - name: nocodb-data
+        mountPath: /usr/app/data
