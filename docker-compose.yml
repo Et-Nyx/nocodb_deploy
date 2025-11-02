@@ -1,0 +1,13 @@
+services:
+  nocodb:
+    image: nocodb/nocodb:latest
+    container_name: nocodb
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./quilombos.db:/usr/app/data/quilombos.db
+      - ./noco.db:/usr/app/data/noco.db  
+    restart: unless-stopped
+
+volumes:
+  nocodb_data:
